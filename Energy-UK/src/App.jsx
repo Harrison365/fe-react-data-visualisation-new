@@ -1,25 +1,19 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { RegionPicker } from "./Components/RegionPicker";
+import { Chart } from "./Components/Chart";
 
 function App() {
-  const [regions, setRegions] = useState([]);
-  useEffect(() => {
-    fetch("https://api.carbonintensity.org.uk/regional")
-      .then((res) => {
-        return res.json();
-      })
-      .then(({ data }) => {
-        setRegions(data[0].regions);
-      });
-  }, []);
+
+  const [regionId, setRegionId] = useState('18')
 
   return (
     <div className="App">
       <h1>Welcome to Energy-UK</h1>
-      <RegionPicker regions={regions} />
+      <RegionPicker setRegionId={setRegionId}/>
+      <Chart regionId={regionId} />
     </div>
-  );
+  )
 }
 
 export default App;
