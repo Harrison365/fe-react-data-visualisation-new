@@ -1,5 +1,3 @@
-test
-
 # React Data Fetching
 
 In this sprint you'll be using data from a third party API. Your task is to create a React-based interface to present this data in an interactive and engaging way. What you display and how you display it is entirely up to you, but your app must allow users to interact with your data visualisation in some way.
